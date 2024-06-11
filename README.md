@@ -39,5 +39,15 @@ I created another security group for the load balancer (ALBSG) that allows outbo
 6. I created a target group and registered the EC2 instances.
 ![](https://github.com/Moka1302/aws1/blob/main/Target%20Group.png)
 
-7. 
+7. I created an Application Load Balancer with the target group
+![](https://github.com/Moka1302/aws1/blob/main/Load%20Balancer.png)
+
+Testing the Load Balancer from the browser:
+response from server1
+![](https://github.com/Moka1302/aws1/blob/main/response%20from%20server1.png)
+
+response from server2
+![](https://github.com/Moka1302/aws1/blob/main/response%20from%20server2.png)
+
+9. 
 
