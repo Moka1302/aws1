@@ -24,35 +24,36 @@ Deploying a custom vpc for a multi-tier web application to be hosted inside AWS.
 ![](https://github.com/Moka1302/aws1/blob/main/vpc.png)
 
 
-3. I created a security group for the web/app instances that allow inbound traffic only from the application load balancer security group as a source and allows all outbound traffic.
+3. I created a security group for the web/app instances named WebSG, that allows inbound traffic only from the application load balancer security group as a source and allows all outbound traffic.
 ![](https://github.com/Moka1302/aws1/blob/main/WebSG.png)
 
 
-I created another security group for the load balancer (ALBSG) that allows outbound HTTP to the web/app security group (webSG) and allows inbound traffic from the internet on port HTTP.
+I created another security group for the load balancer (ALBSG) that allows outbound HTTP to the web/app security group (WebSG) and allows inbound traffic from the internet on port HTTP.
 ![](https://github.com/Moka1302/aws1/blob/main/ALBSG.png)
 
 
 4. I launched 2 EC2 instances in the private subnets with no public IP, and attached a user data script to download httpd and execute:
+   
    `echo " This is server *1* in AWS Region US-EAST-1 in AZ US-EAST-1A " > /var/www/html/index.html` for server1
    
    `echo " This is server *2* in AWS Region US-EAST-1 in AZ US-EAST-1B " > /var/www/html/index.html` for server2
    
-   I connected to the EC2 using the EC2 Instance Connect Endpoint and allowing SSH inbound traffic. I just followed the AWS docs [here.](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-with-ec2-instance-connect-endpoint.html) 
+   I can connect the EC2 using the EC2 Instance Connect Endpoint and allow SSH inbound traffic. I just followed the AWS docs [here.](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-with-ec2-instance-connect-endpoint.html) 
 
 
 5. I created a target group and registered the EC2 instances.
 ![](https://github.com/Moka1302/aws1/blob/main/Target%20Group.png)
 
 
-6. I created an Application Load Balancer with the target group
+6. I created an Application Load Balancer assigned to the 2 public subnets in 2 different AZ
 ![](https://github.com/Moka1302/aws1/blob/main/Load%20Balancer.png)
 
-Testing the Load Balancer from the browser:
-response from server1
+Testing the Load Balancer from the browser: response from server1
 ![](https://github.com/Moka1302/aws1/blob/main/response%20from%20server1.png)
 
-response from server2
+after refreshing the browser: the response from server2
 ![](https://github.com/Moka1302/aws1/blob/main/response%20from%20server2.png)
+
 
 7. Created Launch template and auto-scaling group
    ![](https://github.com/Moka1302/aws1/blob/main/auto-scaling%20group.png)
