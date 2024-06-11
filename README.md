@@ -1,2 +1,5 @@
 # aws1
-custom VPC for a Mul9-Tier Web Applica9on to be hosted inside AWS
+Deploying a custom VPC for a Multi-Tier Web application to be hosted inside AWS.
+
+
+
