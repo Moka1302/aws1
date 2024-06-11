@@ -1,9 +1,11 @@
 # aws1
-Deploying a custom VPC for a multi-tier web application to be hosted inside AWS. it's the project for the course: [AWS Introduction For The Absolute Beginners](https://www.dolfined.com/courses/arabic-aws-introduction-for-absolute-beginners) at![Dolfined.com](https://www.dolfined.com/)
+Deploying a custom VPC for a multi-tier web application to be hosted inside AWS. 
+
+it's the project for the course: [AWS Introduction For The Absolute Beginners](https://www.dolfined.com/courses/arabic-aws-introduction-for-absolute-beginners) at ![Dolfined.com](https://www.dolfined.com/)
 
 
 ## Overview
-I created a custom VPC with 4 subnets, 2 public and 2 private. I deployed a load balancer that receives public requests from the Internet and distributes the workload between the instances. The instances exist in 2 private subnets while the load balancer exists in 2 public subnets. Finally, I created an auto-scaling group for high availability. 
+I created a custom VPC with 4 subnets, 2 public and 2 private, and deployed a load balancer that receives public requests from the Internet and distributes the workload between the instances. The instances exist in 2 private subnets while the load balancer exists in 2 public subnets. Finally, I created an auto-scaling group for high availability. 
 
 
 ## Roadmap
