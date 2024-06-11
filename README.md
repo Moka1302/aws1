@@ -4,18 +4,12 @@ Deploying a custom VPC for a multi-tier web application to be hosted inside AWS.
 it's the project for the course: [AWS Introduction For The Absolute Beginners](https://www.dolfined.com/courses/arabic-aws-introduction-for-absolute-beginners) at ![Dolfined.com](https://www.dolfined.com/)
 
 
-
-
 ## Overview
 I created a custom VPC with 4 subnets, 2 public and 2 private, and deployed a load balancer that receives public requests from the Internet and distributes the workload between the instances. The instances exist in 2 private subnets while the load balancer exists in 2 public subnets. Finally, I created an auto-scaling group for high availability. 
 
 
-
-
 ## Roadmap
 ![](https://github.com/Moka1302/aws1/blob/main/roadmap.png)
-
-
 
 
 ## Resources to be built:
@@ -48,7 +42,7 @@ I created another security group for the load balancer (ALBSG) that allows outbo
 
 
 
-4. I launched 2 EC2 instances in the private subnets with no public IP, and attached a user data script to download httpd and execute:
+4. I launched 2 EC2 instances in the private subnets with no public IP, and attached a user data script to download `httpd` and execute:
    
    `echo " This is server *1* in AWS Region US-EAST-1 in AZ US-EAST-1A " > /var/www/html/index.html` for server1
    
